@@ -21,6 +21,14 @@ namespace Airline_Reservation_Console_System_Project2
             Console.WriteLine("the result of this operation is: " + input);
         }
 
-        
+        // _______welcome message_______
+
+        public static void DisplayWelcomeMessage()
+        {
+            string[] message = { "1. Welcome to program menu" };
+
+            string input = Console.ReadLine();
+        }
+
     }
 }
