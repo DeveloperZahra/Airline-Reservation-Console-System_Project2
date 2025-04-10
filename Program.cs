@@ -29,6 +29,22 @@ namespace Airline_Reservation_Console_System_Project2
 
             string input = Console.ReadLine();
         }
+        //________show Menu__________ 
+        public static void ShowMainMenu(string input)
+        {
+            bool ProgramContinue = true; //addition the  function types  of the project...
+            do
+            {
+                Console.WriteLine("  \n 2. Book Flight: \n 3. The Largest number is:  \n 4. View Flights: \n 5. Exit  ");
+                int choice = int.Parse(Console.ReadLine());
+                return;
 
+
+
+                ExitApp(ref ProgramContinue);
+
+            }
+            while (ProgramContinue != false);
+        }
     }
 }
