@@ -94,5 +94,29 @@ namespace Airline_Reservation_Console_System_Project2
             SeatsNum_A[FlightCounter] = SeatsNum;
 
         }
-    }
+        //___5. Display All Flights______
+        public static void DisplayAllFlights()
+        {
+            Console.WriteLine("All Available Flight Information ");
+            //check by___using loop through all flights up to the current number of valiable flight__
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                //check if flight is avilable
+                if (SeatReserved_A[i] < SeatsNum_A[i])
+                {
+                    // ___Display all information of avilable flight____
+                    Console.WriteLine($"Avilable Flight {FlightCounter}: ");
+                    Console.WriteLine($"Flight Code: {FlightCode_A[i]}");
+                    Console.WriteLine($"From City: {FromCity_A[i]}");
+                    Console.WriteLine($"To City: {ToCity_A[i]}");
+                    Console.WriteLine($"Departure Time: {DepartureTime_A[i]}");
+                    Console.WriteLine($"Duration : {Duration_A[i]} hours");
+                    Console.WriteLine($"Seats Number: {SeatsNum_A[i]} Seats"); // ___Number of Avilabe seats on specific flight__
+                    Console.WriteLine($"Reserved Seats Number: {SeatReserved_A[i]} Seats"); // ____display how many number of seat are reserve in th flight__
+                    Console.WriteLine($"Remaining  Seats Number: {SeatsNum_A[i] - SeatReserved_A[i]} Seats"); // __display how many of seats are remaine__
+                    Console.WriteLine("-------------------------------------------------------------------------");
+                }
+
+            }
+        }
 }
