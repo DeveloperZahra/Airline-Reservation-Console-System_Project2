@@ -104,7 +104,7 @@ namespace Airline_Reservation_Console_System_Project2
                 //check if flight is avilable
                 if (SeatReserved_A[i] < SeatsNum_A[i])
                 {
-                    // ___Display all information of avilable flight____
+                    // ___Display all information of not avilable flight____
                     Console.WriteLine($"Avilable Flight {FlightCounter}: ");
                     Console.WriteLine($"Flight Code: {FlightCode_A[i]}");
                     Console.WriteLine($"From City: {FromCity_A[i]}");
@@ -118,5 +118,36 @@ namespace Airline_Reservation_Console_System_Project2
                 }
 
             }
+       
         }
+        //____6. Find Flight By Code_____
+
+        public static bool FindFlightByCode(string code)
+        {
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (code == FlightCode_A[i])
+                { // _____Find the information___ 
+                    Console.WriteLine($"Flight Code: {FlightCode_A[i]}");
+                    Console.WriteLine($"From City: {FromCity_A[i]}");
+                    Console.WriteLine($"To City: {ToCity_A[i]}");
+                    Console.WriteLine($"Departure Time: {DepartureTime_A[i]}");
+                    Console.WriteLine($"Duration : {Duration_A[i]} hours");
+                    Console.WriteLine($"Seats Number: {SeatsNum_A[i]} Seats"); 
+                    Console.WriteLine($"Reserved Seats Number: {SeatReserved_A[i]} Seats"); 
+                    Console.WriteLine($"Remaining  Seats Number: {SeatsNum_A[i] - SeatReserved_A[i]} Seats"); 
+                    Console.WriteLine("-------------------------------------------------------------------------");
+                }
+            }
+
+            return true;
+
+        }
+
+        // 18.  ____Start System____
+
+
+
+
+    }
 }
