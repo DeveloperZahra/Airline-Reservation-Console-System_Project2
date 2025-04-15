@@ -162,5 +162,22 @@ namespace Airline_Reservation_Console_System_Project2
             return true;
 
         }
+        //7.____Update Flight Departure_____
+        public static DateTime UpdateFlightDeparture(ref DateTime departure)
+        {
+            int index = 0;
+            Console.WriteLine("Enter the flight code: ");
+            string flightCode = Console.ReadLine();
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (FlightCode[i] == flightCode)
+                {
+                    index = i;
+                }
+
+            }
+
+            return DepartureTime[index] = departure;
+        }
     }
 }
