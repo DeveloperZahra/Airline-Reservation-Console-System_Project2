@@ -28,6 +28,11 @@ namespace Airline_Reservation_Console_System_Project2
         //____check if exist___
         static bool ISFound = true;
 
+        // _______1. welcome message_______
 
+        public static void DisplayWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to Airline Reservation System");
+        }
     }
 }
