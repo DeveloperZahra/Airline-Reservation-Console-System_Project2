@@ -140,5 +140,27 @@ namespace Airline_Reservation_Console_System_Project2
 
 
         }
+        //____6. Find Flight By Code_____
+        public static bool FindFlightByCode(string code)
+        {
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (code == FlightCode[i])
+                {
+                    Console.WriteLine($"Flight Code: {FlightCode[i]}");
+                    Console.WriteLine($"From City: {FromCity[i]}");
+                    Console.WriteLine($"To City: {ToCity[i]}");
+                    Console.WriteLine($"Departure Time: {DepartureTime[i]}");
+                    Console.WriteLine($"Duration : {Duration[i]} hours");
+                    Console.WriteLine($"Seats Number: {SeatsNumber[i]} Seats"); // __Number of Avilabe seats on specific flight___
+                    Console.WriteLine($"Reserved Seats Number: {SeatReserved[i]} Seats"); // __display how many number of seat are reserve in th flight___
+                    Console.WriteLine($"Remaining  Seats Number: {SeatsNumber[i] - SeatReserved[i]} Seats"); // __display how many of seats are remaine___
+                    Console.WriteLine("-------------------------------------------------------------------------");
+                }
+            }
+
+            return true;
+
+        }
     }
 }
