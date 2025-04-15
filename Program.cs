@@ -331,6 +331,27 @@ namespace Airline_Reservation_Console_System_Project2
 
 
         }
+        //14.______Add Function (Overloaded)________
+        //________to print int____
+        public static int CalculateFare(int basePrice, int numTickets)
+        {
+            int TotalFarePrice = basePrice * numTickets;
+            return TotalFarePrice;
+        }
+        //_____________to print double & int______
+        public static double CalculateFare(double basePrice, int numTickets)
+        {
+            double TotalFarePrice = basePrice * numTickets;
+            return TotalFarePrice;
+        }
+        //__________to print string_____
+        public static double CalculateFare(int basePrice, int numTickets, int discount)
+        {
+
+            double discountAmount = (basePrice / 100) * discount;
+            double TotalFarePrice = (basePrice * numTickets) - discount;
+            return TotalFarePrice;
+        }
 
 
 
