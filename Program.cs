@@ -22,7 +22,26 @@ namespace Airline_Reservation_Console_System_Project2
         static string[] BookingFlightCode = new string[100];
         static string[] GenerateBookingID = new string[100];
         static int tickets = 0;
+        //___________________________Lists_________________________
+        //___Create the Lists and add the required variables__
+        static List <int> Max_Flight_L = new List<int>();
+        static List <int> FlightCounter_L = new List<int> ();
+        static  List <string> FlightCode_L = new List <string>();
+        static List <string> FromCity_L = new  List <string>();
+        static List <string> ToCity_L = new List<string> ();
+        static List <DateTime> DepartureTime_L = new List <DateTime>();
+        static List <int> Duration_L = new List<int> ();
+        static List <int> SeatsNumber_L = new List<int>();
+        static List <int> SeatReserved_L = new List<int>();
+        static List <int> price_L = new List<int> ();
+        // ___variables and Listes Passenger Booking Functions section_____
+        static List <int> BookingCounter_L = new List<int>();
+        static List <string> PassengerName_L = new List <string>();
+        static List <string> BookingFlightCode_L = new List <string>();
+        static List <string> GenerateBookingID_L = new List<string> ();
+        static List <int> tickets_L = new List<int>();
 
+        //__________________________________________
         // ____flag to validate the user input___ 
         static bool isValid = false;
         //____check if exist___
