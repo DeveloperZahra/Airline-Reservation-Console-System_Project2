@@ -306,7 +306,31 @@ namespace Airline_Reservation_Console_System_Project2
 
         }
 
+        // 13._____Search Bookings By Destination____
+        public static void SearchBookingsByDestination(string toCity)
+        {
+            int ToCityIndex = 0;
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (ToCity[i] == toCity)
+                {
+                    ToCityIndex = i;
+                }
+            }
 
+            for (int i = 0; i < BookingCounter; i++)
+            {
+                if (FlightCode[ToCityIndex] == BookingFlightCode[i])
+                {
+                    Console.WriteLine(PassengerName[i]);
+                    Console.WriteLine(GenerateBookingID[i]);
+                    Console.WriteLine("----------------------------------------------");
+                }
+
+            }
+
+
+        }
 
 
 
