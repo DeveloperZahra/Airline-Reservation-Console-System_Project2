@@ -85,5 +85,60 @@ namespace Airline_Reservation_Console_System_Project2
             SeatsNumber[FlightCounter] = SeatsNum;
 
         }
+        //___5. Display All Flights______
+        public static void DisplayAllFlights()
+        {
+            Console.WriteLine("All Available Flight Information ");
+
+            //___check by using loop through all flights up to the current number of valiable flight__
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                //check if flight is avilable
+                if (SeatReserved[i] < SeatsNumber[i])
+                {
+                    // ___Display all information of not avilable flight____
+                    Console.WriteLine($"Avilable Flight {FlightCounter}: ");
+                    Console.WriteLine($"Flight Code: {FlightCode[i]}");
+                    Console.WriteLine($"From City: {FromCity[i]}");
+                    Console.WriteLine($"To City: {ToCity[i]}");
+                    Console.WriteLine($"Departure Time: {DepartureTime[i]}");
+                    Console.WriteLine($"Duration : {Duration[i]} hours");
+                    Console.WriteLine($"Seats Number: {SeatsNumber[i]} Seats"); // ___Number of Avilabe seats on specific flight__
+                    Console.WriteLine($"Reserved Seats Number: {SeatReserved[i]} Seats"); // ____display how many number of seat are reserve in th flight__
+                    Console.WriteLine($"Remaining  Seats Number: {SeatsNumber[i] - SeatReserved[i]} Seats"); // __display how many of seats are remaine__
+                    Console.WriteLine("-------------------------------------------------------------------------");
+                }
+
+            }
+            Console.WriteLine("All Not Available Flight Information ");
+            bool isFound = false; //___reset and use local variable___
+                                  // ___Loop through all flights up to the current number of not valiable flight___
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                //___check if flight is not available____
+                if (SeatReserved[i] >= SeatsNumber[i])
+                {
+                    isFound = true;
+                    // _____display the information of not available flight______
+                    Console.WriteLine($"Unavailable Flight {i + 1}: ");
+                    Console.WriteLine($"Flight Code: {FlightCode[i]}");
+                    Console.WriteLine($"From City: {FromCity[i]}");
+                    Console.WriteLine($"To City: {ToCity[i]}");
+                    Console.WriteLine($"Departure Time: {DepartureTime[i]}");
+                    Console.WriteLine($"Duration : {Duration[i]} hours");
+                    Console.WriteLine($"Seats Number: {SeatsNumber[i]} Seats");
+                    Console.WriteLine($"Reserved Seats Number: {SeatReserved[i]} Seats");
+                    Console.WriteLine($"Remaining  Seats Number: {SeatsNumber[i] - SeatReserved[i]} Seats");
+                    Console.WriteLine("-------------------------------------------------------------------------");
+                }
+            }
+
+            if (!isFound)
+            {
+                Console.WriteLine("No flight is fully booked..!");
+            }
+
+
+        }
     }
 }
