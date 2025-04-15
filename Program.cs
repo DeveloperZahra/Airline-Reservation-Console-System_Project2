@@ -352,7 +352,25 @@ namespace Airline_Reservation_Console_System_Project2
             double TotalFarePrice = (basePrice * numTickets) - discount;
             return TotalFarePrice;
         }
+        // 17.____Confirm Action______ 
+        public static bool ConfirmAction(string action)
+        {
+            while (true)
+            {
+                Console.WriteLine($"{action} confirm (y/n):");
+                string input = Console.ReadLine();
 
+                if (!string.IsNullOrEmpty(input))
+                {
+                    char response = char.ToLower(input[0]);
+
+                    if (response == 'y') return true;
+                    if (response == 'n') return false;
+                }
+
+                Console.WriteLine("An error occurred.. Please enter 'y' or 'n'!");
+            }
+        }
 
 
 
