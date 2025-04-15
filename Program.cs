@@ -262,7 +262,49 @@ namespace Airline_Reservation_Console_System_Project2
             string BookingID = passengerName + randomNumber;
             return BookingID;
         }
+        // 12._______Display Flight Details_______
+        public static void DisplayFlightDetails(string code)
+        {
+            int PassengerNumber = 0;
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (FlightCode[i] == code)
+                {
+                    for (int j = 0; j < BookingCounter; j++)
+                    {
+                        if (BookingFlightCode[j] == code)
+                        {
+                            PassengerNumber++;
+                        }
+                    }
 
+                    Console.WriteLine($"Flight Code: {FlightCode[i]}");
+                    Console.WriteLine($"From City: {FromCity[i]}");
+                    Console.WriteLine($"To City: {ToCity[i]}");
+                    Console.WriteLine($"Duration: {Duration[i]}");
+                    Console.WriteLine($"Departure Time: {DepartureTime[i]}");
+                    Console.WriteLine($"Number of Passenger: {PassengerNumber} ");
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Can not found this code");
+                }
+                Console.WriteLine("Passenger name with booking code: ");
+                for (int k = 0; k < BookingCounter; k++)
+                {
+                    if (BookingFlightCode[k] == code)
+                    {
+                        Console.WriteLine($"Pasender Name: {PassengerName[k]}");
+                        Console.WriteLine($"Pasender Code: {BookingFlightCode[k]}");
+
+                    }
+                }
+
+            }
+
+        }
 
 
 
