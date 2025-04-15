@@ -179,5 +179,37 @@ namespace Airline_Reservation_Console_System_Project2
 
             return DepartureTime[index] = departure;
         }
+
+        // 8.____Cancel Flight Booking (out string passengerName)_____ 
+        public static void CancelFlightBooking(out string passengerName)
+        {
+            int index = 0;
+            passengerName = ""; //_____Initial assignment_____
+            for (int i = 0; i < BookingCounter; i++)
+            {
+                if (PassengerName[i] == passengerName)
+                {
+                    index = i;
+                }
+            }
+            bool res = ConfirmAction("Cancel Flight Booking");
+            if (res)
+            {
+
+                for (int i = index; i < BookingCounter; i++)
+                {
+
+                    PassengerName[i] = PassengerName[i + 1];
+                    GenerateBookingID[i] = GenerateBookingID[i + 1];
+                }
+                BookingCounter--;
+                Console.WriteLine("Cancel successfully");
+            }
+            else
+            {
+                Console.WriteLine("Cancel unsuccessful!");
+            }
+
+        }
     }
 }
