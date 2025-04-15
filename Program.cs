@@ -253,7 +253,15 @@ namespace Airline_Reservation_Console_System_Project2
 
             return InExist;
         }
-
+        // 11.____________Generate Booking_ID_____
+        public static string GenerateBooking_ID(string passengerName)
+        {
+            //______generate a random number_______
+            Random random = new Random();
+            string randomNumber = random.Next(1, 100).ToString();
+            string BookingID = passengerName + randomNumber;
+            return BookingID;
+        }
 
 
 
