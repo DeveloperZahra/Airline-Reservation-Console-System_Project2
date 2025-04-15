@@ -67,5 +67,11 @@ namespace Airline_Reservation_Console_System_Project2
 
             return option;
         }
+        //___3. Exit application method____
+        public static void ExitApplication()
+
+        {
+            Console.WriteLine("Thankyou.. Have a Nice Day!");
+        }
     }
 }
