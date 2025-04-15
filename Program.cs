@@ -211,5 +211,27 @@ namespace Airline_Reservation_Console_System_Project2
             }
 
         }
+        //9.___Book Flight +  Generate Booking_ID____
+        public static void BookFlight(string passengerName, string flightCode = "Default003")
+        {
+            int index = 0;
+            string bookingID = GenerateBooking_ID(passengerName);
+            PassengerName[BookingCounter] = passengerName;
+            BookingFlightCode[BookingCounter] = flightCode;
+            GenerateBookingID[BookingCounter] = bookingID;
+            Console.WriteLine("How many tickets would you like to book?");
+            int tickets = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (FlightCode[i] == flightCode)
+                {
+                    SeatReserved[i] = SeatReserved[i] + tickets; //___Resserved seat for every tickets____
+                    break;
+                }
+            }
+
+
+        }
     }
 }
