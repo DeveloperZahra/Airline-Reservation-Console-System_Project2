@@ -73,5 +73,17 @@ namespace Airline_Reservation_Console_System_Project2
         {
             Console.WriteLine("Thankyou.. Have a Nice Day!");
         }
+        //___4. Add Flight___
+        public static void AddFlight(string flightCode, string fromCity, string toCity, DateTime departureTime, int duration, int SeatsNum)
+        {
+            // ___If all validations pass, save the data___
+            FlightCode[FlightCounter] = flightCode;
+            FromCity[FlightCounter] = fromCity;
+            ToCity[FlightCounter] = toCity;
+            DepartureTime[FlightCounter] = departureTime;
+            Duration[FlightCounter] = duration;
+            SeatsNumber[FlightCounter] = SeatsNum;
+
+        }
     }
 }
