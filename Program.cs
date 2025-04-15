@@ -233,5 +233,45 @@ namespace Airline_Reservation_Console_System_Project2
 
 
         }
+        // 10._____Validate Flight Code_____
+        public static bool ValidateFlightCode(string flightCode)
+        {
+            bool InExist = false;
+            for (int i = 0; i < FlightCounter; i++)
+            {
+                if (FlightCode[i] == flightCode)
+                {
+                    Console.WriteLine("The flight code exist..!");
+                    InExist = true;
+                }
+                else
+                {
+                    Console.WriteLine("Flight code not exist..!");
+                    InExist = false;
+                }
+            }
+
+            return InExist;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
