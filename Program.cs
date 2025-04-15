@@ -793,6 +793,11 @@ namespace Airline_Reservation_Console_System_Project2
 
 
 
+        // 1. ___main method___ 
+        static void Main(string[] args)
+        {
+            StartSystem();
+        }
 
 
 
