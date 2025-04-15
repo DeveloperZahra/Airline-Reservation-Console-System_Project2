@@ -34,5 +34,38 @@ namespace Airline_Reservation_Console_System_Project2
         {
             Console.WriteLine("Welcome to Airline Reservation System");
         }
+        //________2. show Main Menu__________ 
+        public static int ShowMainMenu()
+        {
+            int option = 0;
+            do
+            {
+                //___addition the  function types  of the project____
+                Console.Clear();
+                Console.WriteLine("Airline Reservation System");
+                Console.WriteLine("1. Add Flight");
+                Console.WriteLine("2. Display All Flights");
+                Console.WriteLine("3. Find Flight By Code");
+                Console.WriteLine("4. Update Flight Departure");
+                Console.WriteLine("5. Cancel Flight Booking");
+                Console.WriteLine("0. Exit");
+                Console.WriteLine("Enter the option: ");
+                string input = Console.ReadLine();
+                try
+                {
+                    option = int.Parse(input);// ____Make an attempt to analyze the entries._____
+                    isValid = true; // ___If parsing is successful, set isValid to true__
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input. Please enter a number between 0 and 5.");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    isValid = false; // ___Keep isValid false to repeat the loop___
+                }
+            } while (!isValid); // __Continue looping until valid input is received__
+
+            return option;
+        }
     }
 }
